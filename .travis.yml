@@ -1,0 +1,13 @@
+language: python
+python: "3.7"
+dist: xenial
+
+if: branch = master
+
+env:
+  global:
+    - DOCKER_USERNAME: certhubci
+    - secure: "aXbuiqkAsi3Jn6cxbAFG7NvWJIf18nb+ut5VtwMjLZe2TKJjiXYe44PQFCPmWx5Rwy5QtHI+7+yXIXJj+/RJMo6unfMOSQ9jti9f47GJQeW+k0jVZZmoh1Jxv2TMLPMLtfXu/5W8rxRL6biTswxZ5uPtXP/BIoAfFop0t0w4HpHgzJCO1BxozKPIqB8+Ht5s0iFNHvjNEQRBW//VS6zrtAstujqKSCg9M/daLy6+8NMml1hJw6M3DvsbvjVddXhPAzcZYfsbNOnl2x3XBi2SgYOLY9NOi6RH4zEBl+7x9rv9p0bWn4LUQznCag2C/NB27tybfyHTCd9GilqoU1Upvo8ES/1CtfW+RgBsWAAEeK5CWbby5qMg4JlLR4rAClSMeRHhPtjKtmRlXDyivZpv9PX/57IqGr3Fdzc9bS3h2ikusGVSfgFF4ep5gwSsZ+LXqTbFMH9Mi4xi4VeJ/O31U4FePngIYRmUZ1hNGZDb2Pj0AA/LzzU662LLypOt6FVMkCp4CsZpI4uYhz3KUAD5851Z5tldNhCmvqdNdsf0+SI3yX2iDn+krrFJacr9Aad8R3X98pIK2ZqTiy7jKVMXhVhu1fklvHPY17Cs/csgYRG5GrNWFwUWDc+ErIJG1vj8pnF6lkYu0MD8sjC98t+Xf6sv+3nl5axcyj9q3HRSgWs="
+
+script: >-
+  .travis/prune_tags.py certhub/certhub *-travis-build-* "1 week ago"
