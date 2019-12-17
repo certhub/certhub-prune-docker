@@ -35,8 +35,8 @@ def delete_tag(tag, repo, token):
     Delete the specified tag from the given repo
     """
 
-    client = HTTPSConnection("cloud.docker.com")
-    url = "https://cloud.docker.com/v2/repositories/{:s}/tags/{:s}/".format(repo, tag['name'])
+    client = HTTPSConnection("hub.docker.com")
+    url = "https://hub.docker.com/v2/repositories/{:s}/tags/{:s}/".format(repo, tag['name'])
     headers = {
         "Accept": "application/json",
         "Authorization": "JWT {:s}".format(token),
@@ -48,8 +48,8 @@ def delete_tag(tag, repo, token):
 
 
 def list_tags(repo, token):
-    client = HTTPSConnection("cloud.docker.com")
-    url = "https://cloud.docker.com/v2/repositories/{:s}/tags/".format(repo)
+    client = HTTPSConnection("hub.docker.com")
+    url = "https://hub.docker.com/v2/repositories/{:s}/tags/".format(repo)
     headers = {
         "Accept": "application/json",
         "Authorization": "JWT {:s}".format(token),
